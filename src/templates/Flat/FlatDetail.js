@@ -4,7 +4,7 @@ import find from 'lodash/find';
 
 class FlatDetail extends Component {
   render() {
-    debugger;
+    
     const { id:complexId, houses } = this.props.complex;
     const house = find(houses, {id: this.props.houseId});
 

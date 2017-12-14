@@ -12,7 +12,6 @@ class FlatTemplate extends Component {
   }
   
   render() {
-    // console.log('data is', this.props);
     return (
       <FlatDetail
         complex={this.props.data.complexesJson}

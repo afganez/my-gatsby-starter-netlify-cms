@@ -6,23 +6,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default class IndexPage extends React.Component {
-  handleScriptLoad() {
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', user => {
-        if (!user) {
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-    window.netlifyIdentity.init();
-  }
-
   render() {
     let { allComplexesJson } = this.props.data;
     const complexes = allComplexesJson.edges.map(e => e.node);
-    console.log(complexes);
+    
     const settings = {
       dots: true,
       infinite: true,
@@ -58,20 +45,6 @@ export default class IndexPage extends React.Component {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 400)
-          id
-          frontmatter {
-            title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
-            path
-          }
-        }
-      }
-    }
     allComplexesJson {
       edges {
         node {

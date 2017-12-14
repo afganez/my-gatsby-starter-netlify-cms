@@ -18,8 +18,15 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
   </section>;
 }
 
+const defaultPost = {
+  frontmatter: {}
+}
+
 export default ({ data }) => {
-  const { markdownRemark: post } = data;
+  let { markdownRemark: post } = data;
+  if(!post) {
+    post = defaultPost;
+  }
   return <BlogPostTemplate
     content={post.html}
     contentComponent={HTMLContent}

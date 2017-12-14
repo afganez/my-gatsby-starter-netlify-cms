@@ -12,7 +12,7 @@ class HouseTemplate extends Component {
   }
   
   render() {
-    return <HouseDetail complex={this.props.data.complexesJson} houseId={this.props.pathContext.houseId} />
+    return <HouseDetail complex={this.props.data.complexesJson} houseId={this.props.pathContext.houseId} />;
   }
 }
 

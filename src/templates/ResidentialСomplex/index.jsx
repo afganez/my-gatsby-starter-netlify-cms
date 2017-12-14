@@ -15,7 +15,7 @@ class ComplexTemplate extends Component {
   }
 
   render() {
-    return <ComplexDetail complex={this.props.data.complexesJson} />
+    return <ComplexDetail complex={this.props.data.complexesJson} />;
   }
 }
 
