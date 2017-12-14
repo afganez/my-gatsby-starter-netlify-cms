@@ -3,10 +3,10 @@ const each = require('lodash/each');
 const slug = require(`slug`);
 const slash = require(`slash`);
 
-exports.createPages = async ({ boundActionCreators, graphql }) => {
+exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  await graphql(`
+  const mark = graphql(`
     {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
         edges {
@@ -80,7 +80,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     });
   });
 
-  await graphql(
+  const compl = graphql(
     `
       {
         allComplexesJson(limit: 1000) {
@@ -154,4 +154,6 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     });
     return;
   });
+
+  return Promise.all([mark, compl]);
 };
