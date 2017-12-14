@@ -12,11 +12,20 @@
     "gatsby-plugin-sharp": "^1.6.18",
     "gatsby-remark-images": "^1.5.18",
     "gatsby-source-filesystem": "^1.5.5",
+    "gatsby-transformer-json": "^1.0.14",
     "gatsby-transformer-remark": "^1.7.17",
+    "gatsby-transformer-sharp": "^1.6.13",
+    "lodash": "^4.17.4",
     "react-load-script": "0.0.6",
-    "gatsby-transformer-sharp": "^1.6.13"
+    "react-slick": "^0.16.0",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.77.1",
+    "slick-carousel": "^1.8.1",
+    "slug": "^0.9.1"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {

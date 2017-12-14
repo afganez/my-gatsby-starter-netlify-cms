@@ -1,0 +1,133 @@
+[
+  {
+    "id": "1",
+    "name": "ЖК Триумф",
+    "address": "Казань, ул. Триумфальная 21",
+    "desciption": "Описание",
+    "houses": [{
+      "id": "1",
+      "name": "Дом 1",
+      "address": "Лукина 54",
+      "type": "brick",
+      "floor": 8,
+      "flats": [{
+        "id": "1",
+        "countRooms": 1,
+        "floor": 1,
+        "isStudio": true,
+        "quadrature": 18,
+        "price": 2100000
+      }, {
+        "id": "2",
+        "countRooms": 1,
+        "floor": 1,
+        "isStudio": false,
+        "quadrature": 29,
+        "price": 2500000
+      }, {
+        "id": "3",
+        "countRooms": 2,
+        "floor": 5,
+        "isStudio": false,
+        "quadrature": 29,
+        "price": 3500000
+      }]
+    }, {
+      "id": "2",
+      "name": "Дом 2",
+      "address": "'Лукина 56'",
+      "type": "brick",
+      "floor": 5,
+      "flats": [{
+        "id": "4",
+        "countRooms": 1,
+        "floor": 1,
+        "isStudio": true,
+        "quadrature": 18,
+        "price": 2100000
+      }, {
+        "id": "5",
+        "countRooms": 1,
+        "floor": 1,
+        "isStudio": false,
+        "quadrature": 29,
+        "price": 2500000
+      }, {
+        "id": "6",
+        "countRooms": 2,
+        "floor": 5,
+        "isStudio": false,
+        "quadrature": 29,
+        "price": 3500000
+      }]
+    }]
+  }, {
+    "id": "2",
+    "name": "ЖК Взлетный",
+    "address": "Казань, ул. Триумфальная 121",
+    "desciption": "Описание",
+    "houses": [{
+      "id": "3",
+      "name": "Дом 1",
+      "address": "Триумфальная 121-1",
+      "type": "brick",
+      "floor": 8,
+      "flats": [{
+        "id": "1",
+        "countRooms": 1,
+        "floor": 1,
+        "isStudio": true,
+        "quadrature": 18,
+        "price": 2100000,
+        "description": "Классная квартира"
+      }, {
+        "id": "2",
+        "countRooms": 1,
+        "floor": 1,
+        "isStudio": false,
+        "quadrature": 29,
+        "price": 2500000,
+        "description": "Классная квартира"
+      }, {
+        "id": "3",
+        "countRooms": 2,
+        "floor": 5,
+        "isStudio": false,
+        "quadrature": 29,
+        "price": 3500000,
+        "description": "Классная квартира"
+      }]
+    }, {
+      "id": "4",
+      "name": "Дом 2",
+      "address": "Триумфальная 121-2",
+      "type": "brick",
+      "floor": 5,
+      "flats": [{
+        "id": "4",
+        "countRooms": 1,
+        "floor": 1,
+        "isStudio": true,
+        "quadrature": 18,
+        "price": 2100000,
+        "description": "Классная квартира"
+      }, {
+        "id": "5",
+        "countRooms": 1,
+        "floor": 1,
+        "isStudio": false,
+        "quadrature": 29,
+        "price": 2500000,
+        "description": "Классная квартира"
+      }, {
+        "id": "6",
+        "countRooms": 2,
+        "floor": 5,
+        "isStudio": false,
+        "quadrature": 29,
+        "price": 3500000,
+        "description": "Классная квартира"
+      }]
+    }]
+  }
+]

@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-import Script from 'react-load-script';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default class IndexPage extends React.Component {
   handleScriptLoad() {
@@ -18,42 +20,39 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
-    return (
-      <section className="section">
-        <Script
-          url="https://identity.netlify.com/v1/netlify-identity-widget.js"
-          onLoad={this.handleScriptLoad.bind(this)}
-        />
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+    let { allComplexesJson } = this.props.data;
+    const complexes = allComplexesJson.edges.map(e => e.node);
+    console.log(complexes);
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+    return <div>
+      {
+        complexes.map(complex => <div key={complex.id}>
+          <div style={{
+            height: '350px',
+          }}>
+            <Slider {...settings}>
+              <div style={{height: '300px'}}><h3>Фото 1</h3></div>
+              <div style={{height: '300px'}}><h3>Фото 2</h3></div>
+              <div style={{height: '300px'}}><h3>Фото 3</h3></div>
+              <div style={{height: '300px'}}><h3>Фото 4</h3></div>
+              <div style={{height: '300px'}}><h3>Фото 5</h3></div>
+              <div style={{height: '300px'}}><h3>Фото 6</h3></div>
+            </Slider>
           </div>
-          {posts.filter(post => post.node.frontmatter.templateKey === 'blog-post').map(({ node: post }) => {
-            return (
-              <div className="content" style={{ border: '1px solid #eaecee', padding: '2em 4em' }} key={post.id}>
-                <p>
-                  <Link className="has-text-primary" to={post.frontmatter.path}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.frontmatter.path}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-    );
+          <div>
+            <Link to={`/residential-complex/${complex.id}`}>{complex.name}</Link>
+            <p>{complex.address}</p>
+            <p>{complex.description}</p>
+          </div>
+        </div>)
+      }
+    </div>;
   }
 }
 
@@ -70,6 +69,15 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
           }
+        }
+      }
+    }
+    allComplexesJson {
+      edges {
+        node {
+          ...ComplexDetail_details
+          ...HouseDetail_details
+          ...FlatDetail_details
         }
       }
     }
